@@ -6,33 +6,27 @@ import { Link } from "react-router-dom";
 const Card = (props) => {
     return (
         <div className="card" style={{ width: "18rem" }}>
-            <img
-                src={imageUrl}
-                className="card-img-top"
-                alt={props.name}
-                onError={ImageError}
-            />
             <div className="card-body">
                 <h5 className="card-title">{props.name}</h5>
-                {props.gender && (
-                    <p className="card-text">
-                        Gender: {props.gender} <br />
-                        Hair Color: {props.hairColor} <br />
-                        Eye Color: {props.eyeColor} <br />
-                    </p>
-                )}
-                {props.climate && (
-                    <p className="card-text">
-                        Climate: {props.climate} <br />
-                        Population: {props.population} <br />
-                        Terrain: {props.terrain} <br />
-                    </p>
-                )}
-                {props.model && (
+                {props.starship_class && (
                     <p className="card-text">
                         Model: {props.model} <br />
-                        Manufacturer: {props.manufacturer} <br />
-                        Cost in Credits: {props.cost_in_credits} <br />
+                        Starship_class: {props.starship_class} <br />
+                        Passengers: {props.passengers} <br />
+                    </p>
+                )}
+                {props.cost_in_credits && (
+                    <p className="card-text">
+                        Model: {props.model} <br />
+                        Population: {props.cost_in_credits} <br />
+                        Passengers: {props.passengers} <br />
+                    </p>
+                )}
+                {props.classification && (
+                    <p className="card-text">
+                        Name: {props.name} <br />
+                        Classification: {props.classification} <br />
+                        Language: {props.language} <br />
                     </p>
                 )}
                 <Link
@@ -49,26 +43,16 @@ const Card = (props) => {
                 </button>
             </div>
         </div>
-
-
-
-
-
-
 );
 }
     Card.propTypes = {
-        name: PropTypes.string.isRequired,
-        gender: PropTypes.string,
-        hairColor: PropTypes.string,
-        eyeColor: PropTypes.string,
-        climate: PropTypes.string,
-        population: PropTypes.string,
-        terrain: PropTypes.string,
+        name: PropTypes.string,
         model: PropTypes.string,
-        manufacturer: PropTypes.string,
-        cost_in_credits: PropTypes.string,
-        imageUrl: PropTypes.string.isRequired,
+        starship_class: PropTypes.string,
+        passengers: PropTypes.string,
+        population: PropTypes.string,
+        classification: PropTypes.string,
+        language: PropTypes.string,
         type: PropTypes.string.isRequired,
         id: PropTypes.string.isRequired,
     };

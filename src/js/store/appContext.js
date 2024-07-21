@@ -24,12 +24,12 @@ const injectContext = PassedComponent => {
 		useEffect(() => {
             state.actions.getStarships();
             state.actions.getVehicles();
-            state.actions.getFilms();
+            state.actions.getSpecies();
         }, []);
 
-        useEffect(() => {
-            localStorage.setItem("store", JSON.stringify(state.store));
-        }, [state.store]);
+        // useEffect(() => {
+        //     localStorage.setItem("store", JSON.stringify(state.store));
+        // }, [state.store]);
 
 
 		// The initial value for the context is not null anymore, but the current state of this component,
