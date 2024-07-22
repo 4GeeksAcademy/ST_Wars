@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faJedi } from '@fortawesome/free-solid-svg-icons';
 import { Link } from "react-router-dom";
 
 const Card = (props) => {
@@ -31,15 +32,15 @@ const Card = (props) => {
                 )}
                 <Link
                     to={`/single/${props.type}/${props.id}`}
-                    className="btn btn-outline-warning mb-4 me-5"
+                    className="btn btn-outline-danger mb-4 me-5"
                 >
                     Learn more!
                 </Link>
                 <button
                     type="button"
-                    className="btn btn-outline-warning mb-4 ms-5"
+                    className="btn btn-outline-danger mb-4 ms-5"
                 >
-                    <i className="fa-solid fa-star"></i>
+                    <FontAwesomeIcon icon={faJedi} />
                 </button>
             </div>
         </div>
