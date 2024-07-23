@@ -1,8 +1,8 @@
-import React, { useState, useEffect, useContext } from "react";
-import PropTypes from "prop-types";
-import { Link, useParams } from "react-router-dom";
-import { Context } from "../store/appContext";
+import React from "react";
+import More from "../component/more";
 
 export const Single = () => {
-		return <Detail />;
-		};
+    return <More />;
+};
+
+export default Single;

@@ -38,8 +38,10 @@ export const Home = () => {
 				<li className="list-group pe-5 pt-4" key={index}>
 					{vehicle.properties ? (
 						<Card
+							name={vehicle.properties.name}
 							model={vehicle.properties.model}
 							cost_in_credits={vehicle.properties.cost_in_credits}
+							vehicle_class={vehicle.properties.vehicle_class}
 							length={vehicle.properties.length}
 							passengers={vehicle.properties.passengers}
 							id={vehicle.uid}
@@ -66,7 +68,7 @@ export const Home = () => {
 						classification = {specie.properties.classification}
         				language = {specie.properties.language}
 						id={specie.uid}
-							type="Species"
+						type="species"
 						/>
 					) : (
 						<div>Loading...</div>

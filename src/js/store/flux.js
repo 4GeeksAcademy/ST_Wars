@@ -58,6 +58,7 @@ const getState = ({ getStore, getActions, setStore }) => {
             listVehicles: [],
             listSpecies: [],
             infoCharacter: [],
+            favorites: JSON.parse(localStorage.getItem("favorites")) || [],
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -65,6 +66,18 @@ const getState = ({ getStore, getActions, setStore }) => {
             getVehicles: () => apiFetch("vehicles", "listVehicles"),
             getSpecies: () => apiFetch("species", "listSpecies"),
 			getInformation: (type, id) => fetchInformation(type, id),
+            addFavorite: (item) => {
+                const store = getStore();
+                const updatedFavorites = [...store.favorites, item];
+                setStore({ favorites: updatedFavorites });
+                localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
+            },
+            removeFavorite: (item) => {
+                const store = getStore();
+                const updatedFavorites = store.favorites.filter(fav => fav.id !== item.id);
+                setStore({ favorites: updatedFavorites });
+                localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
+            }
 		}
 	};
 };
