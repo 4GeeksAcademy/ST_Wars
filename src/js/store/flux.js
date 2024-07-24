@@ -12,12 +12,7 @@ const getState = ({ getStore, getActions, setStore }) => {
                         `https://www.swapi.tech/api/${endpoint}/${id}`
                     );
                     const details = await responseDetails.json();
-                    return {
-                        ...item,
-                        properties: {
-                            ...details.result.properties,
-                        },
-                    };
+                    return {...item,properties: {...details.result.properties,},};
                 })
             );
 
